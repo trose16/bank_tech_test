@@ -21,16 +21,16 @@ describe Bank do
     end
 
     it 'assigns dates to each user deposit' do
-      expect(bank.statement).to eq([{ transaction_date: "2017-01-23", credit: 100, debit: 0, balance: 100 }])
+      expect(bank.statement).to eq([{ date: "2017-01-23", credit: 100, debit: 0, balance: 100 }])
     end
 
     it 'assigns dates to each user withdrawl' do
       bank.withdraw(50)
-      expect(bank.statement).to include({ transaction_date: "2017-01-23", credit: 0, debit: 50, balance: 50 })
+      expect(bank.statement).to include({ date: "2017-01-23", credit: 0, debit: 50, balance: 50 })
     end
 
     it 'has a statement with credits, debits, dates, and balance' do
-      expect(bank.print_statement).to include("Date  | Credit | Debit | Balance |")
+      expect(bank.print_statement).to include("Date | Credit | Debit | Balance |")
     end
 
   end

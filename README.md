@@ -1,3 +1,7 @@
+```ruby
+def method
+  ```
+
 PROJECT DESCRIPTION
   Bank tracks the user's debit/credit's along with transaction dates and a rolling balance.
 
