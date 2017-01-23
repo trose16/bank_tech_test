@@ -6,8 +6,7 @@ class Bank
 
   attr_reader :statement, :balance, :account_transactions
 
-  def initialize(transaction = nil, statement = nil)
-    @account_transactions = transaction
+  def initialize(statement = nil)
     @statement = statement
   end
 

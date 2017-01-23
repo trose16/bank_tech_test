@@ -4,18 +4,12 @@ require_relative 'bank.rb'
 
 class Statement
 
-  attr_reader :bank_data, :transaction
+  attr_reader :transaction
 
-  def initialize(transaction)
-    @transaction = transaction
-    @bank_data = []
+  def initialize(transactions)
+    @transactions = transactions
   end
 
-  def add
-
-  def print_statement
-
-  end
 
 
 end
