@@ -4,7 +4,7 @@ require_relative 'transactions'
 
 class Transactions
 
-  attr_reader :debit, :credit, :balance
+  attr_reader :transactions
 
   def initialize
     @transactions = []

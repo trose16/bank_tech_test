@@ -2,6 +2,8 @@
 
 class Transaction
 
+  attr_reader :credit, :debit, :balance
+
   def initialize(credit = 0, debit = 0)
     @date = Date.today.to_s
     @credit = credit
