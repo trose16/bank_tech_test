@@ -12,4 +12,9 @@ class Bank
     @statement << @balance
   end
 
+  def withdraw(money)
+    @balance -= money
+    @statement << @balance
+  end
+
 end
