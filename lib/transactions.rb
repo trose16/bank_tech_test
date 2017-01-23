@@ -1,14 +1,17 @@
-# goal of transaction class is provide fx for creating credit, debits, tracking date and calculating balance
+require_relative 'transactions'
+
+# goal of transactions class is to take a single transaction and put them in a full list of multiple transactions
 
 class Transactions
 
   attr_reader :debit, :credit, :balance
 
-  def initialize(credit = 0, debit = 0)
-    @date = Date.today.to_s
-    @credit = credit
-    @debit = debit
-    @balance = credit - debit
+  def initialize
+    @transactions = []
+  end
+
+  def track_transaction(transaction)
+    @transactions << transaction
   end
 
 
