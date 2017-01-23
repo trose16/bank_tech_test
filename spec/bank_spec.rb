@@ -30,7 +30,7 @@ describe Bank do
     end
 
     it 'has a statement with credits, debits, dates, and balance' do
-      expect(bank.print_statement).to include("date, credit, debit, balance")
+      expect(bank.print_statement).to include("Date  | Credit | Debit | Balance |")
     end
 
   end
