@@ -22,11 +22,11 @@ class Bank
   end
 
   def format_data
-    @statement.collect {|data| "#{data[:transaction_date]} | #{data[:credit]} | #{data[:debit]} | #{data[:balance]}"}
+    @statement.collect {|data| "#{data[:transaction_date]} |".ljust(10) "#{data[:credit]} |".ljust(10) "#{data[:debit]} |".ljust(10) "#{data[:balance]} |".ljust(10) }
   end
 
   def print_statement
-    puts "Date       | Credit | Debit | Balance |"
+    puts "Date |".ljust(10) + "Credit |".ljust(10) + "Debit |".ljust(10) + "Balance |".ljust(10)
     puts format_data
   end
 
