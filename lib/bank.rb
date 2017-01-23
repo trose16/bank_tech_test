@@ -1,28 +1,25 @@
+require_relative 'statement'
+require_relative 'transactions'
+
 class Bank
 
-  attr_reader :statement, :balance
+  attr_reader :statement, :balance, :account_transactions
 
-  def initialize
-    @balance = 0
-    @statement = []
+  def initialize(transaction = nil, statement = nil)
+    @account_transactions = transaction
+    @statement = statement
   end
 
-  def deposit(money)
-    date = Date.today.to_s
-    @balance += money
-    transaction = { date: date, credit: money, debit: 0, balance: @balance }
-    @statement << transaction
+  def deposit(transaction)
+    @account_transactions << transaction
   end
 
-  def withdraw(money)
-    date = Date.today.to_s
-    @balance -= money
-    transaction = { date: date, credit: 0, debit: money, balance: @balance }
-    @statement << transaction
+  def withdraw(transaction)
+    @account_transactions << transaction
   end
 
   def format_data
-    @statement.collect {|data| "#{data[:date]}".ljust(15) + " | " +  "#{data[:credit]}".ljust(15) + " | " + "#{data[:debit]}".ljust(15) + " | " +  "#{data[:balance]}".ljust(15)}
+    @account_transactions.collect {|data| "#{data[:date]}".ljust(15) + " | " +  "#{data[:credit]}".ljust(15) + " | " + "#{data[:debit]}".ljust(15) + " | " +  "#{data[:balance]}".ljust(15)}
   end
 
   def print_statement
